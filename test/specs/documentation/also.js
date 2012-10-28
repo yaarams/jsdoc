@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("multiple doclets per symbol", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/also.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/also.js'),
         name = docSet.getByLongname('Asset#name').filter(function($) {
             return ! $.undocumented;
         });

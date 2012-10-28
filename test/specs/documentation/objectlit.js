@@ -1,6 +1,9 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("object literals", function() {
     describe("When a child of an objlit has no @name or @memberof tags", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/objectlit.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/objectlit.js'),
             found = docSet.getByLongname('tools.serialiser.value');
 
         it("should have a doclet with the correct longname", function() {
@@ -21,7 +24,7 @@ describe("object literals", function() {
     });
 
     describe("When a parent of an objlit has no documentation", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/objectlit2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/objectlit2.js'),
             found = docSet.getByLongname('position.axis.x');
 
         it("should have a doclet with the correct longname", function() {

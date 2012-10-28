@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@type tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/typetag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/typetag.js'),
         foo = docSet.getByLongname('foo')[0],
         bar = docSet.getByLongname('bar')[0];
 

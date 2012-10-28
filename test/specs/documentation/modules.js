@@ -1,3 +1,5 @@
+/*global beforeEach: true, describe: true, env: true, expect: true, it: true */
+
 describe("module names", function() {
     var parser = require('jsdoc/src/parser'),
         srcParser = null, doclets;

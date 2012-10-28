@@ -1,6 +1,9 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("inner scope", function() {
     describe("Outer~inner.member cases", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/innerscope.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/innerscope.js'),
             to = docSet.getByLongname('Message~headers.to'),
             from = docSet.getByLongname('Message~headers.from'),
             response = docSet.getByLongname('Message~response.code');
@@ -19,7 +22,7 @@ describe("inner scope", function() {
     });
 
     describe("other cases", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/innerscope2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/innerscope2.js'),
             to = docSet.getByLongname('Message~headers.to'),
             from = docSet.getByLongname('<anonymous>~headers.from'),
             cache = docSet.getByLongname('<anonymous>~headers.cache');

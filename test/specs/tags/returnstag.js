@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@returns tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/returnstag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/returnstag.js'),
         find = docSet.getByLongname('find')[0],
         bind = docSet.getByLongname('bind')[0];
 

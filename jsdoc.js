@@ -330,8 +330,8 @@ function main() {
         console.log( jsdoc.opts.parser.help() );
         process.exit(0);
     } else if (env.opts.test) {
-        include('test/runner.js');
-        process.exit(0);
+        require('test/runner.js');
+        //process.exit(0);
     }
 
     if (env.conf.plugins) {

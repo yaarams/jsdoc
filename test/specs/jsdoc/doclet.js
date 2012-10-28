@@ -1,8 +1,10 @@
 /*global describe: true, env: true, expect: true, it: true, jasmine: true */
+var helpers = require('test/specs/helpers');
+
 describe("jsdoc/doclet", function() {
     // TODO: more tests
     
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/doclet.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/doclet.js'),
         test1 = docSet.getByLongname('test1')[0],
         test2 = docSet.getByLongname('test2')[0];
 

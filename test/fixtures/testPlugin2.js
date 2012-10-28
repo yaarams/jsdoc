@@ -1,12 +1,13 @@
+/*global sinon: true */
 exports.handlers = {
-    fileBegin: jasmine.createSpy('fileBegin'),
-    beforeParse: jasmine.createSpy('beforeParse'),
-    jsdocCommentFound: jasmine.createSpy('jsdocCommentFound'),
-    symbolFound: jasmine.createSpy('symbolFound'),
-    newDoclet: jasmine.createSpy('newDoclet'),
-    fileComplete: jasmine.createSpy('fileComplete')
+    fileBegin: sinon.spy(),
+    beforeParse: sinon.spy(),
+    jsdocCommentFound: sinon.spy(),
+    symbolFound: sinon.spy(),
+    newDoclet: sinon.spy(),
+    fileComplete: sinon.spy()
 };
 
-exports.nodeVisitor = {
-    visitNode: jasmine.createSpy("plugin 2 visitNode")
-};
+exports.nodeVisitor = sinon.stub({
+    visitNode: function() {}
+});

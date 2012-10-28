@@ -1,7 +1,8 @@
-/*global describe: true, expect: true, it: true, jasmine: true */
- describe("@augments tag", function() {
-    /*jshint unused: false */
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/augmentstag.js'),
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
+describe("@augments tag", function() {
+    var docSet = helpers.getDocSetFromFile('test/fixtures/augmentstag.js'),
         foo = docSet.getByLongname('Foo')[0],
         fooProp1 = docSet.getByLongname('Foo#prop1')[0],
         fooProp2 = docSet.getByLongname('Foo#prop2')[0],
@@ -23,7 +24,7 @@
         bazMethod2 = docSet.getByLongname('Baz#method2')[0],
         bazMethod3 = docSet.getByLongname('Baz#method3')[0],
 
-        docSet2 = jasmine.getDocSetFromFile('test/fixtures/augmentstag2.js'),
+        docSet2 = helpers.getDocSetFromFile('test/fixtures/augmentstag2.js'),
         qux = docSet2.getByLongname('Qux')[0];
 
     it('When a symbol has an @augments tag, the doclet has a augments property that includes that value.', function() {

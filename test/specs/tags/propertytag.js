@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@property tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/propertytag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/propertytag.js'),
         myobject = docSet.getByLongname('myobject')[0];
 
     it('When a symbol has an @property tag with a those properties appear in the parsed object.', function() {

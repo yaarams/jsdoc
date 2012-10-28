@@ -1,7 +1,10 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("lends", function() {
     describe("when a documented member is inside an object literal associate with a @lends tag", function() {
         describe("standard case", function() {
-            var docSet = jasmine.getDocSetFromFile('test/fixtures/lends.js'),
+            var docSet = helpers.getDocSetFromFile('test/fixtures/lends.js'),
                 init = docSet.getByLongname('Person#initialize'),
                 name = docSet.getByLongname('Person#name');
 
@@ -14,8 +17,8 @@ describe("lends", function() {
             });
         });
 
-        describe("case containg constructor", function() {
-            var docSet = jasmine.getDocSetFromFile('test/fixtures/lends2.js'),
+        describe("case containing constructor", function() {
+            var docSet = helpers.getDocSetFromFile('test/fixtures/lends2.js'),
                 person = docSet.getByLongname('Person').filter(function($) {
                     return ! $.undocumented;
                 })[0],
@@ -35,7 +38,7 @@ describe("lends", function() {
         });
 
         describe("case that uses @lends in a multiline doclet", function() {
-            var docSet = jasmine.getDocSetFromFile('test/fixtures/lends3.js'),
+            var docSet = helpers.getDocSetFromFile('test/fixtures/lends3.js'),
                 init = docSet.getByLongname('Person#initialize'),
                 name = docSet.getByLongname('Person#name');
 
@@ -51,7 +54,7 @@ describe("lends", function() {
     });
 
     describe("when a documented member is inside an objlit associated with a @lends tag that has no value.", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/lendsglobal.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/lendsglobal.js'),
             testf = docSet.getByLongname('test')[0],
             test1 = docSet.getByLongname('test1')[0],
             test12 = docSet.getByLongname('test1.test2')[0];

@@ -1,6 +1,9 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("this", function() {
     describe("attaching members to 'this'", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/this.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/this.js'),
             found1 = docSet.getByLongname('Singer#tralala'),
             found2 = docSet.getByLongname('Singer#isSinging');
 
@@ -42,7 +45,7 @@ describe("this", function() {
     });
 
     describe("when a contructor is nested inside another constructor", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/this2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/this2.js'),
             found = docSet.getByLongname('TemplateBuilder#Template#rendered');
 
         it("should have a longname like Constructor#Constructor#member", function() {
@@ -63,7 +66,7 @@ describe("this", function() {
     });
 
     describe("When a this is assigned to inside a non-constructor function", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/this3.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/this3.js'),
             found = docSet.getByLongname('position');
 
         it("should have a global member name like 'member'", function() {
@@ -80,7 +83,7 @@ describe("this", function() {
     });
 
     describe("When a member is nested inside an objectlit 'this' property inside a constructor", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/this-and-objectlit.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/this-and-objectlit.js'),
             found = docSet.getByLongname('Page#parts.body.heading');
 
         it("should have a longname like Constructor#objlit.member", function() {

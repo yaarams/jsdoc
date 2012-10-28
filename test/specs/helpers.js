@@ -1,7 +1,11 @@
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+/*global env: true */
+var fs = require('fs');
+var path = require('path');
+
+var hasOwnProp = Object.prototype.hasOwnProperty;
 
 exports.getDocSetFromFile = function(filename, parser) {
-    var sourceCode = readFile(env.dirname + '/' + filename),
+    var sourceCode = fs.readFileSync( path.join(env.dirname, filename) ),
         testParser = parser || new (require('jsdoc/src/parser')).Parser(),
         doclets;
 
@@ -28,7 +32,7 @@ exports.getDocSetFromFile = function(filename, parser) {
 exports.indexAll = function(docs) {
     var index = {};
     docs.forEach(function(doc) {
-        if (!hasOwnProperty.call(index, doc.longname)){index[doc.longname] = [];}
+        if (!hasOwnProp.call(index, doc.longname)){index[doc.longname] = [];}
         index[doc.longname].push(doc);
     });
     docs.index = index;

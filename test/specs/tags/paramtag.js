@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@param tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/paramtag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/paramtag.js'),
         find = docSet.getByLongname('find')[0],
         unbind = docSet.getByLongname('unbind')[0],
         bind = docSet.getByLongname('bind')[0],

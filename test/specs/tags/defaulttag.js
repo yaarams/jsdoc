@@ -1,11 +1,14 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@default tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/defaulttag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/defaulttag.js'),
 		request = (docSet.getByLongname('request') || [])[0],
         response = (docSet.getByLongname('response') || [])[0],
 		rcode = (docSet.getByLongname('rcode') || [])[0],
 		rvalid = (docSet.getByLongname('rvalid') || [])[0],
 		rerrored = (docSet.getByLongname('rerrored') || [])[0],
-		win = (docSet.getByLongname('win') || [])[0];
+		win = (docSet.getByLongname('win') || [])[0],
 		header = (docSet.getByLongname('header') || [])[0];
 
     it('When symbol set to null has a @default tag with no text, the doclet\'s defaultValue property should be: null', function() {

@@ -1,6 +1,9 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@module tag", function() {
     describe("using 'this'", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/moduletag.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/moduletag.js'),
             book = docSet.getByLongname('module:bookshelf.Book')[0],
             title = docSet.getByLongname('module:bookshelf.Book#title')[0];
 
@@ -16,7 +19,7 @@ describe("@module tag", function() {
     });
 
     describe("misc", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/moduletag2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/moduletag2.js'),
             mixer = docSet.getByLongname('module:color/mixer').filter(function($) {
                 return ! $.undocumented;
             })[0],

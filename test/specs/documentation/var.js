@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("var statements", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/var.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/var.js'),
         found = [
             docSet.getByLongname('GREEN'),
             docSet.getByLongname('RED'),

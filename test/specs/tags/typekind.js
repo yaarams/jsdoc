@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@kind tag with type", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/typekind.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/typekind.js'),
         blog = docSet.getByLongname('module:blog/server')[0],
         port = docSet.getByLongname('module:blog/server.port')[0];
 

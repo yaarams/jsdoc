@@ -1,3 +1,4 @@
+/*global describe: true, env: true, expect: true, it: true */
 describe("@overview tag", function() {
     var parser = require('jsdoc/src/parser'),
         srcParser = new parser.Parser(),

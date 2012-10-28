@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@exception tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/exceptiontag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/exceptiontag.js'),
         foo = docSet.getByLongname('foo')[0],
         bar = docSet.getByLongname('bar')[0],
         pez = docSet.getByLongname('pez')[0];

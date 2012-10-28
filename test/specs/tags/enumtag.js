@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@enum tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/enumtag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/enumtag.js'),
         tristate = docSet.getByLongname('TriState')[0];
 
     it('When a symbol has a @enum tag, it has a properties array.', function() {

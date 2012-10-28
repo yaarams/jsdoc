@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("When a getter or setter is the child of an object literal", function () {
-    var docSet = jasmine.getDocSetFromFile("test/fixtures/getset.js"),
+    var docSet = helpers.getDocSetFromFile("test/fixtures/getset.js"),
         foundName = docSet.getByLongname("Person#name"),
         foundAge = docSet.getByLongname("Person#age");
 

@@ -1,7 +1,10 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("quoted names", function() {
 
     describe("when found in square brackets", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/quotename.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/quotename.js'),
             found1 = docSet.getByLongname('chat.\"#channel\".open')[0];
 
 
@@ -12,7 +15,7 @@ describe("quoted names", function() {
     });
 
     describe("when found in an object literal", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/quotename2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/quotename2.js'),
             found1 = docSet.getByLongname("contacts.\"say-\\\"hello\\\"@example.com\".username")[0];
 
         it('should have correct name and memberof', function() {

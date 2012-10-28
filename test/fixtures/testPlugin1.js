@@ -1,10 +1,11 @@
+/*global sinon: true */
 exports.handlers = {
-    fileBegin: jasmine.createSpy('fileBegin'),
-    beforeParse: jasmine.createSpy('beforeParse'),
-    jsdocCommentFound: jasmine.createSpy('jsdocCommentFound'),
-    symbolFound: jasmine.createSpy('symbolFound'),
-    newDoclet: jasmine.createSpy('newDoclet'),
-    fileComplete: jasmine.createSpy('fileComplete')
+    fileBegin: sinon.spy(),
+    beforeParse: sinon.spy(),
+    jsdocCommentFound: sinon.spy(),
+    symbolFound: sinon.spy(),
+    newDoclet: sinon.spy(),
+    fileComplete: sinon.spy()
 };
 
 exports.defineTags = function(dictionary) {
@@ -16,8 +17,8 @@ exports.defineTags = function(dictionary) {
     });
 };
 
-exports.nodeVisitor = {
-    visitNode: jasmine.createSpy("plugin 1 visitNode").andCallFake(function(node, e, parser, currentSourceName) {
+exports.nodeVisitor = sinon.stub({
+    visitNode: function(node, e, parser, currentSourceName) {
         e.stopPropagation = true;
-    })
-};
+    }
+});

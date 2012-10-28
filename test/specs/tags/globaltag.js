@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@global tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/globaltag.js');
+    var docSet = helpers.getDocSetFromFile('test/fixtures/globaltag.js');
 
     it('When an inner symbol has a @global tag it is documented as if it were global.', function() {
         var found = docSet.getByLongname('foo').filter(function($) {

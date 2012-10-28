@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@readonly tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/readonlytag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/readonlytag.js'),
         Collection = docSet.getByLongname('Collection')[0],
         length = docSet.getByLongname('Collection#length')[0];
 

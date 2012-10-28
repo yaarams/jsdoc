@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@access tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/accesstag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/accesstag.js'),
         foo = docSet.getByLongname('Thingy~foo')[0],
         _bar = docSet.getByLongname('Thingy#_bar')[0],
         pez = docSet.getByLongname('Thingy#pez')[0],

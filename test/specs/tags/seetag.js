@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@see tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/seetag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/seetag.js'),
         foo = docSet.getByLongname('foo')[0],
         bar = docSet.getByLongname('bar')[0];
 

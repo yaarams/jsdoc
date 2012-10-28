@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@constructor tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/constructortag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/constructortag.js'),
         feed = docSet.getByLongname('Feed')[0];
 
     it('When a symbol has an @constructor tag, it is documented as a class.', function() {

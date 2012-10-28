@@ -19,12 +19,12 @@ describe("common/args", function() {
     
     ourOptions = argParser.parse(['-s', 'true', '-n', 'true']);
 
-    it('should corece a true value if a coercer is provided', function() {
+    it('should coerce a true value if a coercer is provided', function() {
         expect(ourOptions.strict).toBeDefined();
         expect(ourOptions.strict).toEqual(true);
     });
     
-    it('should corece a string value if a no coercer is provided', function() {
+    it('should coerce a string value if no coercer is provided', function() {
         expect(ourOptions.name).toBeDefined();
         expect(ourOptions.name).toEqual('true');
     });

@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@typedef tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/typedeftag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/typedeftag.js'),
         numberlike = docSet.getByLongname('calc.NumberLike')[0];
 
     it('When a symbol has an @typedef tag, the doclet has a kind property set to "typedef".', function() {

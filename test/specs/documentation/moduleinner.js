@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("inner scope for modules", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/moduleinner.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/moduleinner.js'),
         fooIn = docSet.getByLongname('module:my/module~fooIn')[0],
         fooOut = docSet.getByLongname('module:my/module~fooOut')[0];
 

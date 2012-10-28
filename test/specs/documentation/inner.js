@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("when a documented var memeber is inside a named function", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/inner.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/inner.js'),
         found1 = docSet.getByLongname('sendMessage~encoding'),
         found2 = docSet.getByLongname('sendMessage~encrypt');
 

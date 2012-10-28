@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("starbangstar", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/starbangstar.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/starbangstar.js'),
         mod = docSet.getByLongname('module:myscript/core')[0],
         x = docSet.getByLongname('module:myscript/core.x')[0];
 

@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("'exports' symbol in modules", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/exports.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/exports.js'),
         helloworld = docSet.getByLongname('module:hello/world')[0],
         sayhello = docSet.getByLongname('module:hello/world.sayHello')[0];
 

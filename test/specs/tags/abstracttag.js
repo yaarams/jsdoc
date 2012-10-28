@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@abstract tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/abstracttag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/abstracttag.js'),
         type = docSet.getByLongname('Thingy')[0],
         pez = docSet.getByLongname('Thingy#pez')[0];
 

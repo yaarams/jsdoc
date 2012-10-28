@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@class tag", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/classtag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/classtag.js'),
         ticker = docSet.getByLongname('Ticker')[0],
         news = docSet.getByLongname('NewsSource')[0];
 

@@ -1,6 +1,9 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("named function statements", function() {
     describe("standard", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/namedFuncStatement.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/namedFuncStatement.js'),
             fooMember = docSet.getByLongname('Foo#member1')[0],
             fooVariable = docSet.getByLongname('Foo~var1')[0];
 
@@ -14,7 +17,7 @@ describe("named function statements", function() {
     });
 
     describe("global", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/namedFuncStatement2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/namedFuncStatement2.js'),
             fooMember = docSet.getByLongname('Foo#member1')[0],
             fooVariable = docSet.getByLongname('Foo~var1')[0];
 
@@ -28,7 +31,7 @@ describe("named function statements", function() {
     });
 
     describe("as object literal property", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/namedFuncStatement3.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/namedFuncStatement3.js'),
             fooMember = docSet.getByLongname('ns.Foo#member1')[0],
             fooVariable = docSet.getByLongname('ns.Foo~var1')[0];
 

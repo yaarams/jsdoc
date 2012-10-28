@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("virtual symbols", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/virtual.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/virtual.js'),
         found = [
             docSet.getByLongname('dimensions'),
             docSet.getByLongname('width')

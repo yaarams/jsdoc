@@ -1,7 +1,10 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("variations", function() {
 
     describe("by name", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/variations.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/variations.js'),
             fadein1 = docSet.getByLongname('anim.fadein(1)')[0],
             fadein2 = docSet.getByLongname('anim.fadein(2)')[0];
 
@@ -22,7 +25,7 @@ describe("variations", function() {
     });
 
     describe("by tag", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/variations3.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/variations3.js'),
             someObject = docSet.getByLongname('someObject')[0],
             someObject2 = docSet.getByLongname('someObject(2)')[0],
             someObject2method = docSet.getByLongname('someObject(2).someMethod')[0];

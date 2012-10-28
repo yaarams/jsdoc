@@ -1,5 +1,8 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@event and @fires tags", function() {
-    var docSet = jasmine.getDocSetFromFile('test/fixtures/eventfirestag.js'),
+    var docSet = helpers.getDocSetFromFile('test/fixtures/eventfirestag.js'),
         snowballMethod = docSet.getByLongname('Hurl#snowball')[0],
         snowballEvent  = docSet.getByLongname('Hurl#event:snowball')[0];
 

@@ -1,7 +1,10 @@
+/*global describe: true, expect: true, it: true */
+var helpers = require('test/specs/helpers');
+
 describe("@memberof tag", function() {
 
     it('When a symbol has an @member tag, the doclet has a long name that includes the parent.', function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/memberoftag.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/memberoftag.js'),
             Data = docSet.getByLongname('mathlib.Data')[0],
             point = docSet.getByLongname('mathlib.Data#point')[0];
 
@@ -13,7 +16,7 @@ describe("@memberof tag", function() {
     });
 
     describe ("static", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/memberoftag2.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/memberoftag2.js'),
             publish = docSet.getByLongname('Observable#publish')[0],
             cache = docSet.getByLongname('Observable.cache')[0];
 
@@ -37,7 +40,7 @@ describe("@memberof tag", function() {
     });
 
     describe ("forced", function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/memberoftagforced.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/memberoftagforced.js'),
             maproutes = docSet.getByLongname('map.routes')[0],
             datapointy = docSet.getByLongname('Data#point.y')[0];
 
@@ -51,14 +54,14 @@ describe("@memberof tag", function() {
     });
 
     it('A symbol that is a nested class with a @memberof tag.', function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/memberoftag3.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/memberoftag3.js'),
             tree = docSet.getByLongname('module:terrain.Forest#Tree')[0];
 
         expect(tree.longname, 'module:terrain.Forest#Tree');
     });
 
     it('A symbol that is an instance member of a nested class with a @memberof tag.', function() {
-        var docSet = jasmine.getDocSetFromFile('test/fixtures/memberoftag3.js'),
+        var docSet = helpers.getDocSetFromFile('test/fixtures/memberoftag3.js'),
             leaf = docSet.getByLongname('module:terrain.Forest#Tree#leaf')[0];
 
         expect(leaf.longname, 'module:terrain.Forest#Tree#leaf');
